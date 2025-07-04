@@ -10,9 +10,9 @@ dotenv.config();
     apiKey: process.env.OPENAI_API_KEY,
   });
 
-  const response = await model.stream('What is AI?');
+  const response = await model.streamLog('What is AI?');
 
   for await (const chunk of response){
-    console.log(chunk.content)
+    console.log(chunk)
   }
 })();
